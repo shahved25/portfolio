@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ved Shah - Project Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: #111827;
+      --accent-color: #3b82f6;
+      --accent-hover: #60a5fa;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: #1f2937;
+      --tag-bg: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header & Hero */
+    header {
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #60a5fa, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-info a {
+      color: var(--accent-hover);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Headings */
+    h2.section-title {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+      border-left: 4px solid var(--accent-color);
+      padding-left: 0.75rem;
+    }
+
+    /* Project Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-color);
+    }
+
+    .card-header {
+      margin-bottom: 1rem;
+    }
+
+    .card-role {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-hover);
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0.25rem 0;
+      color: var(--text-main);
+    }
+
+    .card-award {
+      font-size: 0.9rem;
+      color: #f59e0b;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-section {
+      margin-bottom: 1rem;
+    }
+
+    .card-section h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-section p {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background-color: var(--tag-bg);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      border: 1px solid #1e3a8a;
+    }
+
+    /* Summary Table */
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 4rem;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background-color: #1f2937;
+      color: var(--accent-hover);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Ved Shah</h1>
+      <div class="subtitle">Computer Science & Artificial Intelligence Portfolio</div>
+      <div class="contact-info">
+        <a href="mailto:vshah255@terpmail.umd.edu">vshah255@terpmail.umd.edu</a>
+        <span>•</span>
+        <span>University of Maryland</span>
+        <span>•</span>
+        <a href="https://shahved25.wixsite.com/ace-tennis-academy" target="_blank">Ace Tennis Academy</a>
+      </div>
+    </header>
+
+    <!-- Main Projects Section -->
+    <h2 class="section-title">Ventures & Featured Projects</h2>
+    <div class="grid">
+
+      <!-- Ace Tennis Academy -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Founder & Head Coach</div>
+            <div class="card-title">Ace Tennis Academy LLC</div>
+            <div class="card-award">120+ Players Coached | 8 Coaches Hired</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Founded and operated a youth tennis academy over four seasons. Managed operations, financial planning, marketing, web design, and sales.</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Navigated court double-bookings, severe weather disruptions, and initial hiring challenges by implementing stronger operational protocols.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>Successful leadership pairs strong core business operations with real-world adaptability under shifting constraints.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">Entrepreneurship</span>
+          <span class="tag">Operations</span>
+          <span class="tag">Leadership</span>
+        </div>
+      </div>
+
+      <!-- Slicer AI -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Founder & Lead Developer</div>
+            <div class="card-title">Slicer AI</div>
+            <div class="card-award">1st Place - Congressional App Challenge (PA-06)</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Built an AI coaching app using 3D pose estimation, cosine similarity, and 3D neural networks to analyze swing video and give actionable feedback.</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Overcame video noise and variable filming angles by refining temporal spatial alignment algorithms.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>The true value of a machine learning model is measured by how clearly its output helps a user improve.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">Computer Vision</span>
+          <span class="tag">3D Neural Nets</span>
+          <span class="tag">Mobile AI</span>
+        </div>
+      </div>
+
+      <!-- CENSAI Lab -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Researcher | Penn State CENSAI Lab</div>
+            <div class="card-title">LLM Interpretability</div>
+            <div class="card-award">Co-author (arXiv:2510.13908v2)</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Investigated how LLaMA 3.2-3B handles internal arithmetic and operator precedence (PEMDAS). Developed an embedding-swap technique to alter internal precedence behavior.</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Disentangled correlated activations using controlled linear probes and causal ablation interventions.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>Controlled causal interventions are essential for verifying whether internal representations actually govern model decisions.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">LLM Research</span>
+          <span class="tag">Interpretability</span>
+          <span class="tag">PyTorch</span>
+        </div>
+      </div>
+
+      <!-- Liberty Science Center -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Robotics Intern | Liberty Science Center</div>
+            <div class="card-title">Multi-Robot Warehouse DRL</div>
+            <div class="card-award">Presented at Partners in Science Symposium</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Designed an autonomous multi-robot warehouse simulation in ROS and Gazebo, pairing global task allocation with local deep reinforcement learning decisions.</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Resolved path conflicts and inter-robot collisions during decentralized navigation planning under dense clutter.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>System performance relies on robust integration layers between global decision-makers and local controllers.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">ROS</span>
+          <span class="tag">Gazebo</span>
+          <span class="tag">Reinforcement Learning</span>
+        </div>
+      </div>
+
+      <!-- Fibromyalgia ML -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Lead Researcher</div>
+            <div class="card-title">Biomedical ML Diagnosis</div>
+            <div class="card-award">3rd Place in CS - Delaware Valley Science Fairs</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Developed an objective diagnostic tool processing HRV, GSR, and EMG signals using GAN augmentation, GCN embeddings, and a 2D CNN pipeline (~94% accuracy).</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Mitigated severe physiological dataset imbalances using GAN-driven data augmentation.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>High empirical accuracy must always stay grounded in dataset boundaries and evaluation methodologies.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">Healthcare AI</span>
+          <span class="tag">Signal Processing</span>
+          <span class="tag">GANs</span>
+        </div>
+      </div>
+
+      <!-- Hurricane Modeling -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Founder & Researcher | SOCCI Group</div>
+            <div class="card-title">Predictive Hurricane Modeling</div>
+            <div class="card-award">Trained on 17 Storms | Tested on 10</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Engineered regression models (Ridge, Log-Ridge, KNN) to estimate U.S. post-hurricane economic damage using atmospheric and geolocation data.</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Prevented severe overfitting on limited historical storm data through feature reduction and regularization.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>Transparent baseline models are invaluable calibration tools when working with small datasets.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">Geospatial AI</span>
+          <span class="tag">Regression</span>
+          <span class="tag">Data Analytics</span>
+        </div>
+      </div>
+
+      <!-- Sensify Lab -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Research Assistant | Sensify Lab</div>
+            <div class="card-title">Vocal Goals Platform</div>
+            <div class="card-award">University of Delaware</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Contributed to a gender-affirming speech platform using Python, Librosa, and OpenSMILE to measure and visualize pitch, formants, and acoustic resonance.</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Converted raw audio spectral metrics into intuitive visual interfaces that non-technical users could act on.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>Technical metrics become actionable only when communicated through intuitive, user-friendly visuals.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">Audio Signal Processing</span>
+          <span class="tag">Python</span>
+          <span class="tag">Librosa</span>
+        </div>
+      </div>
+
+      <!-- GlassBoxAI -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Core Developer | Hackathon</div>
+            <div class="card-title">GlassBoxAI</div>
+            <div class="card-award">3rd Place - Foundry Hackathon</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Built a real-time interview-integrity system for Zoom/Meet using eye tracking, facial landmarks, and voice analysis to detect live AI assistance.</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Reduced multi-modal latency overhead to keep spatial and audio detection synchronized live.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>Real-time automated detection systems require careful false-positive testing before actual deployment.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">Real-Time Computer Vision</span>
+          <span class="tag">Facial Tracking</span>
+          <span class="tag">AI Ethics</span>
+        </div>
+      </div>
+
+      <!-- Kinetix -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <div class="card-role">Spatial Computing Engineer</div>
+            <div class="card-title">Kinetix (Meta Quest)</div>
+            <div class="card-award">NexHacks Hackathon Project</div>
+          </div>
+          <div class="card-section">
+            <h4>What I Did</h4>
+            <p>Developed a VR physical therapy and training coach combining real-time computer vision, joint-angle biomechanics, and instant voice feedback on Meta Quest.</p>
+          </div>
+          <div class="card-section">
+            <h4>Failures Overcome</h4>
+            <p>Optimized spatial computer vision calculations to run smoothly within VR hardware constraints.</p>
+          </div>
+          <div class="card-section">
+            <h4>Key Insight</h4>
+            <p>Biomechanical feedback is most impactful when delivered right at the exact moment of execution.</p>
+          </div>
+        </div>
+        <div class="tag-container">
+          <span class="tag">VR / Spatial Computing</span>
+          <span class="tag">Meta Quest</span>
+          <span class="tag">Biomechanics</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Takeaways Table -->
+    <h2 class="section-title">Strategic Synthesis & Core Principles</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Core Pillar</th>
+            <th>Technical Focus</th>
+            <th>Demonstrating Projects</th>
+            <th>Key Engineering Takeaway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>User-Centric AI</strong></td>
+            <td>Applied CV & Audio Processing</td>
+            <td>Ace Tennis, Slicer AI, Vocal Goals, Community Grocer</td>
+            <td>Build close to the user; solve primary human friction points first.</td>
+          </tr>
+          <tr>
+            <td><strong>Rigorous Verification</strong></td>
+            <td>Interpretability, Probing & Benchmarks</td>
+            <td>LLaMA Interpretability, Fibromyalgia Diagnostic, Hurricane Loss Models</td>
+            <td>Test explanations thoroughly; empirical metrics need causal validation.</td>
+          </tr>
+          <tr>
+            <td><strong>System Integration</strong></td>
+            <td>Multi-Agent Robotics, Spatial & Multimodal AI</td>
+            <td>Warehouse Robotics (ROS), GlassBoxAI, Kinetix (Meta Quest)</td>
+            <td>Unify component layers smoothly; overall stability rests on integration interfaces.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Ved Shah | <a href="mailto:vshah255@terpmail.umd.edu" style="color: var(--text-muted);">vshah255@terpmail.umd.edu</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
